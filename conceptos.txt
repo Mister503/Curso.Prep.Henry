@@ -1,0 +1,172 @@
+Antes de definir una variable.
+
+Identificador, son los nombres usados para referirse a las variables, constantes, funciones, etiquetas y otros objetos definidos por el usuario se conocen como identificadores.
+
+Variable, es un nombre que se asigna a una localidad de memoria que almacena un determinado valor (el valor de la variable).
+El nombre de la variable debe cumplir con las siguientes reglas:
+
+1. Caracteres formados por letras, dígitos y símbolo de subrayados (_).
+
+2. No debe empezar con un dígito.
+
+3. Las palabras reservadas (palabras propias del lenguaje javascript) no se pueden usar como nombres de variables.
+
+4. Javascript trata como distintas las letras mayúsculas de las minúsculas, por lo que se debe de tener cuidado en este aspecto al declarar o usar una variable.
+
+Ejemplos:
+
+Nombre,  num,   cod_postal,    _valor,   NOMBRE,   x2,  etc.
+
+
+Tipos de datos en javascript
+
+Enteros (números), string (cadenas) y boolean (verdadero o falso)
+
+String, es un tipo de dato cadena de carácter guarda un texto y se pueden introducir uno o cualquier número de caracteres. Un texto o cadena puede estar compuesto de números, letras, 
+signos y cualquier otro tipo de caracteres. Una cadena de texto siempre se debe utilizar las comillas dobles (") o simples (').
+
+Ejemplos:
+
+var nombre="Juan Pérez"     var direccion='Andador Pachuca No.23'    var letra='a'
+
+
+Funciones, es un conjunto de instrucciones que permiten procesar las variables para obtener un resultado. Así podemos ver una función como una serie de instrucciones que englobamos dentro de 
+un mismo proceso. Este proceso se puede ejecutar en cualquier parte del código con solo llamarlo.
+
+La declaración de una función es la siguiente:
+
+La palabra function, es la palabra reservada del lenguaje, seguido del nombre de la función paréntesis y después las llaves de abrir y cerrar.
+
+Ejemplo:
+
+function hola(){
+  instrucción 1;
+  instrucción 2;
+  instrucción n;
+}
+
+Como llamar a una función
+
+Para ejecutar la función utilizamos su nombre seguido de los paréntesis y al final punto y coma.
+
+Ejemplo:
+
+ hola();
+
+Función con parámetros o argumentos. Los parámetros o argumentos son los valores de entrada de una función.
+
+Ejemplo:
+Ponemos la palabra reservada function, seguido del nombre de como se llama la función y por último el parámetro o argumento entre paréntesis. Abrimos y cerramos llaves. Entre las llaves dentro
+de la función ponemos la palabra reservada console.log entre paréntesis y comillas simples introducimos la palabra Hola, +nombre que es el parámetro o argumento de la función que tiene 
+asignado. Y para llamar la función es hola entre paréntesis y comillas simples Elena. 
+
+function hola(nombre){
+  console.log('Hola', + nombre);
+}
+
+hola('Elena');
+
+
+Función con más de un parámetro o argumento.
+
+Ponemos la palabra reservada function, seguido del nombre de como se llama la función y por último los parámetros o argumentos entre paréntesis separados por comas. Abrimos y cerramos llaves.
+Entre las llaves ponemos la palabra reservada var seguido de la variable sumar asignadole la variable x más la variable y. Para que realice la suma de x+y. Seguido de la palabra return que nos
+va devolver la operación de x+y en la variable sumar. Y para llamar la función es suma entre paréntesis 4,2.
+
+Ejemplo:
+
+function suma(x,y){
+ var sumar=x+y;
+ return sumar;
+ }
+
+ suma(4,2);
+
+ Declaraciones if
+ Es una estructura de control utilizada para tomar decisiones. Sirve para elegir entre una acción u otra dependiendo de una condición.
+ 
+Los operadores utilizados en javascript son los aritméticos, relacionales y lógicos.
+
+Un operador es un símbolo que indica al lenguaje que lleve a cabo ciertas manipulaciones matemáticas o lógicas. Hay 3 clases de operadores.
+
+Los operadores aritméticos:
+
++ suma
+
+- resta
+
+* multiplicación
+
+/ división
+
+% modulo o residuo de la división
+
+Los operadores relacionales:
+
+> mayor que
+
+< menor que
+
+== igual que
+
+!= diferente que
+
+>= mayor o igual que
+
+<= menor o igual que
+
+Los operadores lógicos, se refieren a las formas en que esas relaciones pueden conectarse entre sí siguiendo las reglas de la lógica formal. Son los siguientes:
+
+&& and 
+
+|| or
+
+! not
+
+El operador && (and) son verdaderas si las condiciones se cumplen.
+
+El operador || (or) son verdaderas si se cumplen cualquiera de las condciones
+
+Ejemplo:
+
+edad=20;
+
+if (edad>=18){
+   console.log("es mayor de edad");
+ } 
+ else{
+  console.log("es menor de edad");
+  }
+
+La condidición se cumple, por lo tanto es verdadera, y muestra el mensaje de es mayor de edad.
+
+Ejemplo:
+
+num=-2;
+
+if (num>0){
+   console.log("el número es positivo");
+   }
+else
+  {
+    console.log("el número es negativo");
+    }
+
+La condición no se cumple, por lo tanto es falsa, y muestra el mensaje de el número es negativo.
+
+Ejemplo:
+
+sexo="femenino";
+
+edad=18;
+
+if (edad>=18 && sexo=="femenino"){
+   console.log("Es mujer y mayor de edad");
+   }
+else
+{
+   console.log("Es hombre y menor de edad");
+   }
+
+Las dos condiciones se cumplen, por lo tanto las dos son verdaderas, y muestra el mensaje de es mujer y mayor de edad.
+
