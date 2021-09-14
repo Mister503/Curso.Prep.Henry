@@ -1,0 +1,119 @@
+Las estructuras ciclicas realizan ciclos que permiten repetir un conjunto de instrucciones hasta que se cumpla cierta condición.
+
+Defición de bucle For
+
+EL bucle for se ejecuta mientas la condición sea cierta, una vez que la condición se hace falsa, continuará en la siguiente instrucción que sigue a la sentencia for.
+
+La sintaxis del bucle for es la siguiente:
+
+for(inicialización;condición;incremento){
+  instrucción 1;
+  instrucción 2;
+  instrucción n;
+}
+
+Donde:
+
+Inicialización: Asignación que se utiliza para iniciar la variable de control del ciclo.
+
+Condición: Expresión que determina cuando terminara el ciclo.
+
+Incremento: Cambia la variable de condición cada vez que se repite el ciclo.
+
+Ejemplo:
+
+Muestra los 10 primeros numeros natuales del 0 al 10.
+
+Declaramos la variable i, utilizamos la palabra reservada for, entre paréntesis inicializamos la variable i a cero, hacemos la condición hasta cuando termina el ciclo la condición i menor o 
+igual que 10, incrementamos la variable i cada vez que se repite el ciclo. Entre llaves utilizamos la palabra reservada console.log(i). Muestra los números naturales del 0 al 10.
+
+var=i;
+
+for(i=0;i<=10;i++)
+{
+  console.log(i);
+  }
+
+Ejemplo:
+
+Muestra la tabla de multiplicar del 2.
+
+declaramos la variable x,y,multi, utilizamos la palabra reservada for, entre paréntesis inicializamos la y a 1, hacemos la condición hasta cuando termina el ciclo la condición y menor o igual
+que 10, incrementamos la variable y cada vez que se repite el ciclo. Entre llaves utilizamos la palabra reservada console.log(x + "*" + y + "=" + multi). Muestra la tabla de multiplicar del 2.
+
+var x,y,multi;
+
+x=2;
+
+for(y=1;y<=10;y++)
+{
+  console.log(x + "*" + y + "=" + multi);
+  }
+
+Operador lógico && (and)
+
+El operador && (and) son verdaderas si las condiciones se cumplen. Siguiendo la siguiente tabla de verdad.
+
+Condición 1      condición 2        condición 1 && condición2
+   v                  v                         v
+   v                  f                         f
+   f                  v                         f
+   f                  f                         f
+
+Ejemplo:
+
+Muestra si es verdadero o falso la condición. La primera condición es vedadero, la segunda es verdadero. Por lo tanto las condiciones son veradero, el resultado es verdadero.
+
+var a,b;
+
+a=5;
+b=3;
+
+if(a>3 && b>=3)
+{
+  console.log("la condición es verdadera");
+ }
+else
+   console.log("la condición es falsa");
+   }
+
+Operador lógico || (or)
+
+El operador || (or) son verdaderos si se cumple cualquiera de las condiciones. Siguiendo la tabla de verdad.
+
+Condición 1     condición 2       condición 1 || condición 2
+    v                v                        v
+    v                f                        v
+    f                v                        v
+    f                f                        f
+
+Ejemplo:
+
+Muestra si es verdadero o falso la condición. La primera condición es verdadero, la segunda condición es falso. Por lo tanto la condición es verdadero. El resultado es verdadero.
+
+var a,b;
+
+a=5;
+b=3;
+
+if((a+b==8) || (a-b==6))
+{
+  console.log("la condición es verdadera");
+ }
+else
+{
+  console.log("la condición es falsa");
+  }
+
+Operador lógico ! (not)
+
+El operador ! (not) permite negar una instrucción.
+
+Ejemplo:
+
+Muestra la negación de la siguiente variable. La variable edo tiene asignado verdadero, al mostrar se niega a falso.
+
+var edo=true;
+
+console.log(!edo);
+
