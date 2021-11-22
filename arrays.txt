@@ -1,0 +1,97 @@
+Arrays (Arreglos o vectores)
+
+La información que maneja una computadora debe estar organizada de forma ordenada o colocada en memoria bajo cierta orden o frecuencia. Una colección de información o datos cuyos elementos en
+memoria se le llama Arreglo (Array).
+Los elementos de los arreglos pueden ser de cualquier tipo de datos, siempre y cuando todos los elementos en el arreglo sean del mismo tipo.
+Un arreglo es un conjunto finito de elementos todos de un mismo tipo de dato.
+
+Para declarar un array existen dos métodos.
+
+EL primer método. 
+
+const nombre_array=new Array();
+
+El segundo método.
+
+const nombre_array=[];
+
+Ejemplo con el primer método.
+
+const array = new Array("a","b","c");
+
+Ejemplo con el segundo método
+
+const array = ["a","b","c"]; este es un arreglo o vector de 3 elementos.
+
+const empty = []; este es un arreglo o vector vacío (0 elementos).
+
+const mixto = ["a",5,true]; este es un arreglo o vector mixto (string, numero, boolean).
+
+Javascript permite que se puedan realizar arreglos o vectores de tipo mixto.
+
+Para acceder a elementos del arreglo o vector
+
+Al igual que las cadenas (string), saber el número de elementos que tiene un array es muy sencillo. Sólo hay que acceder a la propiedad .length, que nos devolverá el número de elementos
+existentes en un array.
+
+Por otro lado si queremos acceder a un elemento específico del array, la numeración de estos elementos dentro del array comienza en 0 (primer elemento del array) y finaliza en n-1 (último
+elemento del array) donde n es el tamaño completo del array.
+
+Ejemplo:
+
+const array = ["a","b","c"]; aquí declaramos un array con 3 elementos de tipo string y el tamaño del array es de 3. 
+
+array[0]; accedemos al elemento de la posición 0 del array es "a".
+
+array[2]; accedemos al elemento de la posición 2 del array es "c".
+
+array[5]; estamos accediendo a una posición que no existe que es mayor del tamaño de array, y nos devuelve un undefined.
+
+Añadir elementos, existen varias formas de añadir elementos a un array existente.
+
+En los arrays en javascript proporciona métodos para insertar por el principio del array y por el final del array. 
+
+El método de inserción, push() o unshift() inserta los elementos pasados por parámetro en el array y devuelve el tamaño actual que tiene el array después de la inserción.
+
+Ejemplo:
+
+const array = ["a", "b", "c"]; este es el array inicial
+
+array.push("d"); aquí devuelve 4. 
+Ahora el array actual es array = ["a", "b", "c", "d"]. Aquí muestra que agrega el elemento al final del array
+
+const array = ["a", "b", "c"]; este es el array inicial
+array.unshift("Z"); aquí devuelve 4. 
+Ahora el array actual es array = ["Z", "a", "b", "c"]. Aquí muestra que agrega el elemento al principio del array.
+
+El método de eliminación, pop() o shift() elimina los elementos pasados por parámetro en el array y devuelve el tamaño actual que tiene el array después de la eliminación.
+
+Ejemplo:
+
+const array = ["a", "b", "c", "d"]; este es el array inicial
+
+array.pop(); aquí devuelve 4.
+Ahora el array actual es array = ["a", "b", "c"]. Aquí muestra que eliminó el elemento al final del array.
+
+const array = ["Z", "a", "b", "c"]; este es el array inicial
+array.shift(); aquí devuelve 4.
+Ahora el array actual es array = ["a", "b", "c"]. Aquí muestra que eliminó el elemento al principio del array.
+
+La mayoría de las veces, los bucles for se utilizan para iterar sobre todos los elementos del array. Usando la técnica de acceso al índice podemos acceder a cada elemento del array.
+Utilizamos el método length como punto de parada para el ciclo.
+
+Ejemplo:
+
+const nombres = ["Luis", "Alina", "Laura", "Mishelle"]; aquí declaramos el array y le asignamos elementos al array.
+
+for(let i=0;i<nombres.length;i++){
+ console.log(nombres[i])
+}
+
+Muestra en forma de lista los nombres
+
+"Luis"
+"Alina"
+"Laura"
+"Mishelle"
+

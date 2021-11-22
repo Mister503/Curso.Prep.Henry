@@ -1,0 +1,301 @@
+Un objeto en javascript es un tipo de datos que se compone de una colección de nombres o claves y valores, representados en un key : value pares. Los pares key: value consisten en propiedades
+que pueden contener cualquier tipo de datos, incluidas cadenas, números y booleanos, así como métodos que son funciones contenidas dentro de un objeto.
+
+Propiedade, claves y valores.
+Todos los objetos en javascript son mapas (diccionarios) desde cadenas hasta valores, una entrada en un objeto se llama a Property. La key propiedad es siempre una cadena de texto y la value
+de una propiedad puede ser cualquier valor de javascript, incluida una función.
+
+Los métodos son propiedades cuyos valores son funciones.
+
+Ejemplo:
+
+let usuario={  // es un objeto
+   nombre: 'Andrea', // nombre es un key:, 'Andrea' es un valor
+   edad: 22          // edad es un key:, 22 es un valor
+}
+
+Hay 3 tipos de propiedades
+
+Propiedades: estas propiedades normales en un objeto, es decir, la asignación de claves de cadena a valores. Y uno más se incluye llamada nombre dato propiedades que incluye métodos.
+
+Accesores: métodos especiales cuyas invocaciones parecen propiedades de lectura o escritura (las propiedades normales son ubicaciones de almacenamiento para los valores de propiedad, los 
+descriptores de acceso nos permiten calcular valores de las propiedades).
+
+Propiedades internas: no son directamente accesibles desde javascript, pero puede haber algunas formas indirectas de acceder a ellas. Ejemplo:
+[[Prototype]] contiene el prototipo de un objeto y se puede leer a través de object.getPrototypeof().
+
+Dos roles de objetos en javascript
+
+Objeto como registros y objetos como diccionarios
+
+Objeto como registros
+
+Registros: Los objetos como registros tienen un número fijo de propiedades, cuyas claves se conocen en el momento del desarrollo. Sus valores pueden tener diferentes tipos.
+
+Los registros de objetos como se crean a través de los llamados literales de objeto. Objetos literales es una característica de javascript: que nos permite crear objetos directamente sin
+necesidade de clases.
+
+Ejemplo:
+
+const nombrecompleto={
+   nombre: 'Andrea',
+   apellido: 'López'
+ };
+
+Operador de puntos (.): Acceso a propiedades mediante teclas fijas.
+
+Obtener propiedades: el operador de punto nos permite obtener una propiedad (leer su valor).
+
+Ejemplo:
+
+const usuario{
+   nombre: 'Andrea',
+   apellido: 'López'
+   nombrecompleto: function(){ //método
+     return `${this.nombre} ${this.apellido}`
+     }
+ };
+
+Métodos de llamada: el operador de puntos también se utiliza para los métodos de llamada.
+
+Ejemplo:
+
+console.log(usuario.nombrecompleto()) //método de llamada nombrecompleto
+
+// Andrea López
+
+Configuración de propiedades: para configurar valores, usamos el operador de asignación (=) a través de la notación de puntos.
+
+Ejemplo:
+
+usuario.nombre = 'Alina' // Set propiedad 'nombre'
+console.log(usuario.nombre)  // Alina
+
+Eliminación de propiedades: el delete operador nos permite eliminar completamente una propiedad (todo el par clave-valor).
+
+Ejemplo:
+
+delete usuario.nombre
+console.log(usuario.nombre) //undefined
+console.log(Object.keys(usuario)) // ['apellido', 'nombrecompleto']
+
+//pero si establecemos una propiedad indefinida la propiedad aún existe y el objeto aún contiene su clave.
+
+usuario.nombrecompleto=undefined
+console.log(object.keys(usuario))  //['apellido', 'nombrecompleto', 'nombre']
+
+delete devuelve false, si la propiedad es una propiedad propia que no se puede eliminar. De lo contrario, devuelve true en todos los demás casos.
+
+Ejemplo:
+
+Object.defineProperty(usuario,'Puede ser eliminada'.{
+ value: 123,
+ configurable: true
+ });
+
+ Object.defineProperty(usuario, 'no puede ser eliminada',{
+  value: 456,
+  configurable: false
+  });
+
+  delete devuelve true incluso si no cambia nada (las propiedades heredadas nunca se eliminan).
+
+  Ejemplo:
+
+  delete usuario.toString // true
+  console.log(usaurio.toString) // aún existe
+
+Hay dos tipos de accesos en javascript
+
+Obtener (leer) una propiedad
+
+Establecer (escribir) una propiedad
+
+Getter: un getter se crea prefijando una definición de método con la palabra clave get.
+
+Ejemplo:
+
+const nombrecompleto ={
+  nombre: 'Alina',
+  apellido: 'Perez',
+  get completo(){
+    return `${this.nombre} ${this.apellido}`
+    }
+  };
+
+Setter: un setter se crea prefijando una definición de método con la palabra clave set.
+
+Ejemplo:
+
+const nombrecompleto={
+  nombre:'Alina`,
+  apellido:'Perez'
+  set completo(nombre){
+    const partes=nombre.split(' ')
+    this.nombre=partes[0]
+    this.apellido=partes[1]
+    }
+  };
+
+  nombrecompleto.completo='Alina Perez';
+  console.log(nombrecompleto.nombre) // Alina
+  console.log(nombrecompleto.apellido) // Perez
+
+Objetos literales (...)
+
+Dentro de un objeto literal, una propiedad de propagación agrega las propiedades de otro objeto al actual.
+
+Ejemplo:
+
+let nombrecompleto={
+     nombre: 'Alina',
+     apellido: 'Perez'
+ };
+
+nombrecompleto={...nombrecompleto, edad:22}
+console.log(nombrecompleto) // { nombre:'Alina', apellido:'Perez', edad:22 }
+
+// Características adicionales
+// 1. Cambiar el contenido de un objeto
+
+nombrecompleto={...nombrecompleto, edad:25}
+console.log(nombrecompleto) // { nombre:'Alina', apellido:'Perez', edad:25 }
+
+// 2. Copiar datos de un objeto
+const copy={...nombrecompleto};
+console.log(copy) // { nombre:'Alina', apellido:'Perez', edad:25 }
+
+// 3. Valores predeterminados
+const allData={edad:30, ...nombrecompleto} // permanecer preterminado para nombre completo
+console.log(allData) // { nombre:'Alina', apellido:'Perez', edad:25 }
+
+Métodos:
+
+Sabemos que las funciones ordinarias desempeñan varios papales.Method es uno de esos roles.
+
+Ejemplo:
+
+const usuario={
+  nombre:'Alina',
+  apellido:'Perez',
+  nombrecompleto: function() {
+    return `${this.nombre} ${this.apellido}`
+   }
+ };
+
+ console.log(usuario.nombrecompleto())  // Alina Perez
+
+Call: es una función que nos permite llamar / invocar / activar otra función. Cuando usamos call para llamar a una función, podemos cambiar el this contexto.
+
+Ejemplo:
+
+function nombre(nombre, apellido){
+ console.log(`${nombre} ${apellido}`)
+ }
+
+nombre('Alina', 'López')
+
+nombre.call(null, 'Alina', 'López')
+
+También podemos llamar a la función a través de call.
+
+El primer parámetro pasa a la llamada de la función reemplaza el contexto this.
+
+Otros valores pasa a las funciones se comportan como argumentos normales.
+
+
+Operador de corchetes ( [ ] ): Acceso a propiedades mediante claves calculadas.
+
+El operador de corchetes nos permite hacer referencia a una propiedad a través de una expresión.
+
+Ejemplo:
+
+const usuario={
+   nombre: 'Alina',
+   apellido: 'López'.
+   nombrecompleto: function () {
+     return `${this.nombre} ${this.apellido}`
+    }
+  };
+
+  console.log(usuario['nombre']) // Alina
+
+const nombre='nombre';
+
+console.log(usuario[nombre])  // Alina
+
+// Eso también nos permite acceder a propiedades cuyas claves no son identificadores:
+
+const obj = {
+  'nombre': 456
+};
+
+console.log(obj['nombre']) // 456
+
+const otroObj = {
+  '6': 'bar'
+};
+
+console.log(otroObj[3 + 3]) //bar (clave: la cadena '6')
+
+Métodos de llamada
+
+Ejemplo:
+
+const usuario={
+  nombrecompleto: function () {
+    return `Alina`
+   }
+};
+
+console.log(usuario['nombrecompleto']()) // Alina
+
+
+Bucle for...in
+
+La instrucción for...in itera una variable especificada sobre todas las propiedades enumerables de un objeto. Para cada propiedad distinta, javascript ejecuta las intrucciones especificadas.
+Una declaración for... in tiene el siguiente aspecto.
+
+for (variable in objeto)
+  instrucción.
+
+Ejemplo:
+
+La siguiente función toma como argumento un objeto y el nombre del objeto. Luego itera sobre todas las propiedades del objeto y devuelve una cadena que enumera los nombres de las propiedades
+y sus valores.
+
+function dump_props(obj,obj_nombre) {
+  let result = ' ';
+  for (let i in obj) {
+     result += obj_nombre + ' _ '+ i + ' = ' + obj[i] + '<br>';
+     }
+     result += '<hr>';
+     return result;
+}
+
+Notación de puntos vs notación de corchetes
+
+Hay dos principales diferencias:
+
+1. Cuando usamos corchetes podemos acceder a propiedades que tienen un espacio o carácter no permitido en la notación de punto ( por ejemplo, miMascota.numero de amigos no es válido, pero
+miMascota["numero de amigos"] sí lo es).
+
+2. Si queremos minificar nuestro código, la notación del punto no es válida... debemos usar la notación de corchetes.
+
+Ejemplo, agreguemos una nueva propiedad al objeto de manera que quede así:
+
+var miMascota = {
+   "nombre": "Maggie",
+   "raza": "French Pooddle",
+   "edad": 2,
+   "numero de amigos": 3
+}
+
+y si queremos imprimir el número de amigos.
+
+console.log(miMascota.numero de amigos); // produce un error
+
+En cambio si usamos los corchetes...
+
+console.log(miMascota["numero de amigos"]); // funciona correctamente.
+
